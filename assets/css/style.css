@@ -1,3 +1,7 @@
+/* In order to have the bootstrap match what I had orignally turned in I had to do a fair bit of my own CSS. But I was able to use 0 media queries */
+
+/* These were just basic css to get the over all look a little closer to my original design by changing the default bootstrap values on certain things */
+
 html {
     position: relative;
     min-height: 100%;
@@ -5,7 +9,6 @@ html {
   }
   
 body {
-    /* Margin bottom by footer height */
     margin-bottom: 90px;
     background: url("../images/dark_embroidery.png") rgb(54, 54, 54);
   }
@@ -19,6 +22,8 @@ h3 {
 h1, h2, h3 {
     font-family: 'Georgia', 'Times New Roman', Times, serif;
 }
+
+/* I had to do A LOT to the navbar to get it to look right or even close to what I turned in the first time, but thanks to the inspect tool and much Google-fu I was able to get it almost the same. */
 
 .navbar {
     background: #0b1c26;
@@ -42,15 +47,27 @@ h1, h2, h3 {
     background-color: #d97a43;
 }
 
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background: transparent;
+}
+
 .navbar-nav li a {
     line-height: 50px;
     font-size: 1.3em;
     color: #666666;
+    background: #0b1c26 !important; /* The !important tag is used to make sure that this personal CSS actually overrides the bootstrap CSS without having to get incredibly specific on the classes */
    }
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
     color: #084da6;
 }
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border: none;
+    margin-top: 0;
+}
+
+/* After the navbar most everything else is pretty easy and I was able to almost copy and paste my css from my first assignment into here */
 
 .content {
     background: #fff;
@@ -86,6 +103,7 @@ p {
     margin-top: 0.83em 0 0.83em 0;
 }
 
+/* I had to remove a lot of the default bootstrap css on top of adding css to get the right look */
 
 .panel-default > .panel-heading {
     background: #fff;
@@ -101,6 +119,65 @@ p {
     padding: 0;
 }
 
+/* contact.html specific code */
+
+input[type=submit] {
+    background: #084da6;
+    text-align: center;
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-size: 1em;
+    padding: 10px 20px;
+    width: 20%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+form .btn-default:hover {
+    background: #084da6;
+    color: #fff;
+    border: none;
+}
+
+form .btn-default:active {
+    background: #d97a43 !important;
+    color: #fff !important;
+}
+
+form .btn-default.focus, .btn-default:focus {
+    background: #084da6;
+    color: #fff;
+    border: none;
+}
+
+/* portfolio.html specific code */
+
+.gallery a img:hover {
+    outline: 3px solid #084da6 !important;
+    outline-offset: -3px !important;
+}
+
+.gallery {
+    position: relative;
+    padding: 15px 0;
+}
+
+.thumbnail .caption {
+    background: #084da6;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Georgia', 'Times New Roman', Times, serif; 
+    position: absolute;
+    bottom: 10%;
+}
+
+.thumbnail .caption h3 {
+    margin: 5px;
+}
+
+/* And finally for the footer, basic copy/paste from my first assignment with some addition so that the sticky footer works in bootstrap */
 
 .footer {
     position: absolute;
